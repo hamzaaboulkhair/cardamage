@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "525302986195",
+    "project_id": "cardamagedetection-1689c",
+    "storage_bucket": "cardamagedetection-1689c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525302986195:android:7b45fb3ffb23afcfc56b26",
+        "android_client_info": {
+          "package_name": "com.example.cardamage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCrU_65Qi1nut5hC9B4_u2tvFpn0chyNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525302986195:android:266c8a93a067c19cc56b26",
+        "android_client_info": {
+          "package_name": "com.example.cardamage_detection"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCrU_65Qi1nut5hC9B4_u2tvFpn0chyNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525302986195:android:654a371dd1b45302c56b26",
+        "android_client_info": {
+          "package_name": "com.exemple.ri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCrU_65Qi1nut5hC9B4_u2tvFpn0chyNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
