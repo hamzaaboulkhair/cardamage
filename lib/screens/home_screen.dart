@@ -27,10 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _loadModelAndLabels() async {
     try {
       // Load the model
-      _interpreter = await Interpreter.fromAsset('assets/mobilenet_v1_1.0_224.tflite');
+      _interpreter = await Interpreter.fromAsset('assets/model (1) (1).tflite');
 
       // Load the labels
-      final labelData = await DefaultAssetBundle.of(context).loadString('assets/mobilenet_v1_1.0_224.txt');
+      final labelData = await DefaultAssetBundle.of(context).loadString('assets/labels (1).txt');
       _labels = labelData.split('\n');
 
       print('Model and labels loaded successfully');
@@ -42,36 +42,37 @@ class _HomeScreenState extends State<HomeScreen> {
   // Run inference on the selected image
   Future<void> _runModelOnImage() async {
     if (_image == null) {
-      setState(() { 
-        _result = "No image selected";
+      setState(() {
+        _result = "Aucune image sélectionnée";
       });
       return;
     }
 
     try {
-      // Load and preprocess the image
+      // Charger et prétraiter l'image
       final img.Image imageInput = img.decodeImage(await _image!.readAsBytes())!;
       final img.Image resizedImage = img.copyResize(imageInput, width: 224, height: 224);
       final input = _preprocessImage(resizedImage);
 
-      // Define the output with correct shape
-      final output = List.generate(1, (_) => List.filled(1001, 0.0), growable: false);
+      // Définir la sortie avec la nouvelle forme
+      final output = List.generate(1, (_) => List.filled(2, 0.0), growable: false);
 
-      // Run inference
+      // Exécuter l'inférence
       _interpreter.run(input.reshape([1, 224, 224, 3]), output);
 
-      // Get the top recognition result
+      // Récupérer le résultat
       final topResult = _getTopRecognition(output);
       setState(() {
-        _result = "Detected: ${topResult['label']} (Confidence: ${(topResult['confidence'] * 100).toStringAsFixed(2)}%)";
+        _result = "Résultat : ${topResult['label']} (Confiance : ${(topResult['confidence'] * 100).toStringAsFixed(2)}%)";
       });
     } catch (e) {
       print('Error during inference: $e');
       setState(() {
-        _result = "Error during inference";
+        _result = "Erreur pendant l'inférence";
       });
     }
   }
+
 
 
   // Preprocess the image for the model

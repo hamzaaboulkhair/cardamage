@@ -74,6 +74,8 @@ flutter:
   assets:
    - assets/mobilenet_v1_1.0_224.tflite
    - assets/mobilenet_v1_1.0_224.txt
+   - assets/model (1) (1).tflite
+   - assets/labels (1).txt
 
 
 
